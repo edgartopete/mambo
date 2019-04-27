@@ -15,17 +15,13 @@
 
 <body>
     <div class="container">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-
-                    <div class = "video-background">
-                            <video autoplay muted loop id="myVideo">
-                        
-                            <source src="https://videos.pond5.com/two-women-entering-spa-footage-083397998_xl.webm" type="video/webm">
-                            <source src="https://videos.pond5.com/two-women-entering-spa-footage-083397998_main_xl.mp4" type="video/mp4">
-                            </video>
-                            </div>
-
-        <div class="row">
+        <div class="video-background">
+            <video playsinline autoplay muted loop id="myVideo">
+                <source src="https://app.coverr.co/s3/mp4/Yellow_Traffic.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="row">
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Sign In</h5>
@@ -53,12 +49,21 @@
                                     class="fab fa-google mr-2"></i> Sign in with Google</button>
                             <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
                                     class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+                            <div class="form-group">
+                                <br>
+                                <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                            </div>
+
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="LogIn.js"></script>
 </body>
+
+
 
 </html>
