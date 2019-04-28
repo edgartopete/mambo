@@ -1,0 +1,22 @@
+h1,
+p, {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* .container {
+    height: 120px;
+} */
+
+.images img{
+    width: 100%;
+    height: 280px;
+}
+
+/* .carousel-item{
+    height: 20% !important;
+} */
+
+body,h1,h2,h3,h4,h5,h6,p {font-family: 'Roboto', sans-serif;
+font-size: 12px;
+}
+.w3-bar-block .w3-bar-item {padding:20px}
