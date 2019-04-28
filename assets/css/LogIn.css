@@ -3,6 +3,13 @@
     --input-padding-y: .75rem;
 }
 
+h1 {
+    font-family: 'Lobster', cursive;
+    position: absolute;
+    font-size: 90px;
+    color: white;
+}
+
 body {
     background: #007bff;
     background: linear-gradient(to right, #0062E6, #33AEFF);
