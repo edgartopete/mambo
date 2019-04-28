@@ -73,8 +73,8 @@ authService.signInWithPopup(provider)
  //manejador de eventos para cerrar sesión (logout)
  $("#btnLogout").on("click",function(){
   console.log( authService.signOut());
-  window.location.replace("index.html");
   console.log("sing out");
+  window.location.replace("index.html");
  });
  /*
  document.getElementById('botonlogout').addEventListener('click', function() {
@@ -86,8 +86,11 @@ authService.signInWithPopup(provider)
  // manejador de eventos para los cambios del estado de autenticación
  authService.onAuthStateChanged(function(user) {
    if (user) {
-     console.log('AuthStateChanged', user)
-     window.location.replace("HomeMambo.html");
+     if(window.location.pathname != "/HomeMambo.html" ){
+      console.log('AuthStateChanged', user);
+      window.location.replace("HomeMambo.html");  
+     }
+     
    } else {
     //window.location.replace("index.html");
    }
