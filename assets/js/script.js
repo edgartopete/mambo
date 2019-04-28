@@ -71,6 +71,11 @@ authService.signInWithPopup(provider)
              });
      })*/
  //manejador de eventos para cerrar sesión (logout)
+ $("#btnLogout").on("click",function(){
+  console.log( authService.signOut());
+  window.location.replace("index.html");
+  console.log("sing out");
+ });
  /*
  document.getElementById('botonlogout').addEventListener('click', function() {
    console.log( authService.signOut());
