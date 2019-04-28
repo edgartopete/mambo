@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba de autenticacion firebase para google (sdk de Javascript)</title>
+  <style>
+    #datosuser{
+      font-size: .8em;
+    }
+  </style>
+</head>
+<body>
+  <button id="botonlogin">Google</button>  
+  <button id="loginfacebook">Facebook</button>
+  <button id="botonlogout">Haz logout</button>  
+  <p id="datosuser"></p>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script>
+  // inicializar Firebase
+  var config = {
+    apiKey: "AIzaSyBEJRfBSbC2vnJu7T-GLa8B-X3wMcr4hTg",
+    authDomain: "mambo-ab916.firebaseapp.com",
+    databaseURL: "https://mambo-ab916.firebaseio.com",
+    projectId: "mambo-ab916",
+    storageBucket: "mambo-ab916.appspot.com",
+    messagingSenderId: "978683882765"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script>
+// accedo al servicio de autenticación
+var authService = firebase.auth();
+
+
+// manejador de eventos para loguearse
+document.getElementById('botonlogin').addEventListener('click', function() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('email');
+  authService.signInWithPopup(provider)
+        .then(function(result) {
+            // logueado con éxito
+            console.log('Hemos autenticado al usuario ', result.user);
+        })
+        .catch(function(error) {
+            // Fallo de login
+            console.log('Se ha encontrado un error:', error);
+        });
+})
+//facebook
+document.getElementById('loginfacebook').addEventListener('click', function() {
+    // creo el provider de autenticación
+    var provider = new firebase.auth.FacebookAuthProvider();
+
+    // opcionalmente modifico el scope
+    provider.addScope('user_friends');
+
+    // accedo al servicio de autenticación
+    var authService = firebase.auth();
+  // autentico con Facebook
+    authService.signInWithPopup(provider)
+            .then(function(result) {
+                //todo correcto
+                console.log('autenticado usuario ', result.user);
+            })
+            .catch(function(error) {
+                console.log('Detectado un error:', error);
+            });
+    })
+//manejador de eventos para cerrar sesión (logout)
+document.getElementById('botonlogout').addEventListener('click', function() {
+  authService.signOut()
+})
+
+
+// manejador de eventos para los cambios del estado de autenticación
+authService.onAuthStateChanged(function(user) {
+  if (user) {
+    console.log('AuthStateChanged', user)
+    document.getElementById('datosuser').innerHTML = JSON.stringify(user);
+    document.getElementById('botonlogin').style.display = 'none';
+    document.getElementById('botonlogout').style.display = 'block';
+  } else {
+    document.getElementById('datosuser').innerHTML = 'Sin usuario logueado...'
+    document.getElementById('botonlogin').style.display = 'block';
+    document.getElementById('botonlogout').style.display = 'none';
+  }
+});
+</script>
+
+
+</body>
+</html>
