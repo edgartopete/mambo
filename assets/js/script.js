@@ -72,6 +72,7 @@ authService.signInWithPopup(provider)
      })*/
  //manejador de eventos para cerrar sesión (logout)
  $("#btnLogout").on("click",function(){
+  console.log("logout",window.location.pathname)
   authService.signOut();
  });
  
