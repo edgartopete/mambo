@@ -72,27 +72,28 @@ authService.signInWithPopup(provider)
      })*/
  //manejador de eventos para cerrar sesión (logout)
  $("#btnLogout").on("click",function(){
-  console.log( authService.signOut());
-  console.log("sing out");
-  window.location.replace("index.html");
+  console.log("logout",window.location.pathname)
+  authService.signOut();
  });
- /*
- document.getElementById('botonlogout').addEventListener('click', function() {
-   console.log( authService.signOut());
-   console.log("sing out");
- })*/
+ 
  
  
  // manejador de eventos para los cambios del estado de autenticación
  authService.onAuthStateChanged(function(user) {
    if (user) {
+    console.log(window.location.pathname);
      if(window.location.pathname != "/HomeMambo.html" ){
       console.log('AuthStateChanged', user);
-      window.location.replace("HomeMambo.html");  
+      //window.location.replace("HomeMambo.html"); 
+      
      }
      
    } else {
-    //window.location.replace("index.html");
+    if(window.location.pathname != "/index.html" ){
+     
+      //window.location.replace("index.html");  
+     }
+    
    }
  });
  
