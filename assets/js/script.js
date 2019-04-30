@@ -53,15 +53,12 @@ authService.signInWithPopup(provider)
    if (user) {
   
      if(window.location.pathname != "/mambo/HomeMambo.html" ){
-
-      console.log('AuthStateChanged', user);
       window.location.replace("HomeMambo.html"); 
-      
      }
      
    } else {
-    if(window.location.pathname != "/mambo/index.html" ){
-     
+
+    if(window.location.pathname != "/mambo/index.html" ){ 
       window.location.replace("index.html");  
      }
     
