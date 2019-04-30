@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="HomeMambo.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">About Us</a>
@@ -195,3 +195,23 @@
 
 	</body>
 </html>
+
+<script>
+
+		$('.navbar-brand').on('click', function(event) {
+			 event.preventDefault();
+			 url = $(this).children().attr('data')
+			 console.log( url )
+			 window.location.href = "HomeMambo.html"
+			 // window.location.href = url
+		})
+
+		$('.navbar-brand').on('click', function(event) {
+			 event.preventDefault();
+			 url = $(this).children().attr('data')
+			 console.log( url )
+			 window.location.href = "HomeMambo.html"
+			 // window.location.href = url
+		})
+			 
+	 </script>
