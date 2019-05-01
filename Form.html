@@ -78,12 +78,12 @@
                     <h2 style="color:teal">ADD A NEW SERVICE</h2>
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputEmail4">Service Title</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Corte de Pelo, Clase de Yoga, Gelish, etc">
+                            <label for="inputService">Service Title</label>
+                            <input type="text" class="form-control" id="inputService" placeholder="Corte de Pelo, Clase de Yoga, Gelish, etc">
                           </div>
                           <div class="form-group col-md-4">
-                                <label for="inputState">Gender</label>
-                                <select id="inputState" class="form-control">
+                                <label for="inputGender">Gender</label>
+                                <select id="inputGender" class="form-control">
                                   <option selected>Choose...</option>
                                   <option>Female</option>
                                   <option>Male</option>
@@ -96,21 +96,26 @@
                           </div> -->
                         </div>
                         <div class="form-group">
-                          <label for="inputAddress">Information</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="Give Details about your Servivce">
+                          <label for="inputDes">Information</label>
+                          <input type="text" class="form-control" id="inputDes" placeholder="Give Details about your Servivce">
                         </div>
-                        <div class="form-group">
-                          <label for="inputAddress2">Image</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Attach your service image">
-                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="file" >
+                            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                          </div>
+                        <!--<div class="form-group">
+                          <label for="inputImg">Image</label>
+                          <input type="text" class="form-control" id="inputImg" placeholder="Attach your service image">
+                        </div>-->
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputCity">Sucursal</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <label for="inputBranch">Sucursal</label>
+                            <input type="text" class="form-control" id="inputBranch">
                           </div>
                           <div class="form-group col-md-4">
-                            <label for="inputState">Time</label>
-                            <select id="inputState" class="form-control">
+                            <label for="inputTime">Time</label>
+                            <select id="inputTime" class="form-control">
                               <option selected>Choose...</option>
                               <option>20 min</option>
                               <option>40 min</option>
@@ -119,8 +124,8 @@
                             </select>
                           </div>
                           <div class="form-group col-md-2">
-                            <label for="inputZip">Price</label>
-                            <input type="text" class="form-control" id="inputZip">
+                            <label for="inputPrice">Price</label>
+                            <input type="text" class="form-control" id="inputPrice">
                           </div>
                         </div>
                         <div class="form-group">
@@ -131,9 +136,9 @@
                             </label>
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;">Submit</button>
+                        <button id="btnServices" type="submit" class="btn btn-primary" style="margin-bottom: 20px;">Submit</button>
                       </form>
-                    
+                      <button id="btnServices2" type="submit" class="btn btn-primary" style="margin-bottom: 20px;">Submit</button>
                     
             
 <!-- Footer -->
@@ -157,7 +162,9 @@
                 
 </body>
 </html>
-
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script src="assets/js/connections.js"></script>
+<script src="assets/js/store_services.js"></script>
 
 <script>
 
