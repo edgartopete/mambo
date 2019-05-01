@@ -25,7 +25,7 @@
 // creo el provider de autenticación
 var provider = new firebase.auth.FacebookAuthProvider();
 // se modifica el scope
-provider.addScope('user_friends');
+provider.addScope('default');
 
 // accedo al servicio de autenticación
 var authService = firebase.auth();
@@ -50,9 +50,9 @@ authService.signInWithPopup(provider)
  
  // manejador de eventos para los cambios del estado de autenticación
  authService.onAuthStateChanged(function(user) {
+   
    if (user) {
-  
-     if(window.location.pathname != "/mambo/HomeMambo.html" ){
+     if(window.location.pathname != "/mambo/HomeMambo.html"){
       window.location.replace("HomeMambo.html"); 
      }
      
