@@ -28,7 +28,7 @@ var provider = new firebase.auth.FacebookAuthProvider();
 provider.addScope('default');
 
 // accedo al servicio de autenticación
-var authService = firebase.auth();
+//var authService = firebase.auth();
 // autentico con Facebook
 authService.signInWithPopup(provider)
         .then(function(result) {
@@ -55,6 +55,7 @@ authService.signInWithPopup(provider)
      if(window.location.pathname != "/mambo/HomeMambo.html"){
       window.location.replace("HomeMambo.html"); 
      }
+     
      
    } else {
 

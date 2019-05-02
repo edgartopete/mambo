@@ -11,4 +11,5 @@ var config = {
 firebase.initializeApp(config);
 var mambodb = firebase.database();
 var sotorageRef = firebase.storage().ref('/servicesImages/');
+var authService = firebase.auth();
 
