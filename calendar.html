@@ -1,68 +1,148 @@
-<!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calendar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/calendar_tools/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/calendar.css">
+    <title>Book Your Appointment</title>
 </head>
 
 <body>
-    <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=347401&type=standard&theme=standard&iframe=true&overlay=false&domain=com&lang=en-US'></script>
+    <div class="jumbotron vertical-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="well-block">
+                        <div class="well-title">
+                            <h2>Book an Appointment</h2>
+                        </div>
+                        <form>
+                            <!-- Form start -->
+                            <div class="row">
+                                <!-- Text input-->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        This appointment will be send to your email for confirmation.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="date">Preferred Date</label>
+                                        <input type="text" id="datepicker" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="time">Preferred Time</label>
+                                        <select id="time" name="time" class="form-control">
+                                            <option value="12:00 AM">12:00 AM</option>
+                                            <option value="12:30 AM">5:30 AM</option>
+                                            <option value="1:00 AM">6:00 AM</option>
+                                            <option value="1:30 AM">6:30 AM</option>
+                                            <option value="2:00 AM">7:00 AM</option>
+                                            <option value="2:30 AM">7:30 AM</option>
+                                            <option value="3:00 AM">8:00 AM</option>
+                                            <option value="3:30 AM">8:30 AM</option>
+                                            <option value="4:00 AM">9:00 AM</option>
+                                            <option value="4:30 AM">9:30 AM</option>
+                                            <option value="5:00 AM">5:00 AM</option>
+                                            <option value="5:30 AM">5:30 AM</option>
+                                            <option value="6:00 AM">6:00 AM</option>
+                                            <option value="6:30 AM">6:30 AM</option>
+                                            <option value="7:00 AM">7:00 AM</option>
+                                            <option value="7:30 AM">7:30 AM</option>
+                                            <option value="8:00 AM">8:00 AM</option>
+                                            <option value="8:30 AM">8:30 AM</option>
+                                            <option value="9:00 AM">9:00 AM</option>
+                                            <option value="9:30 AM">9:30 AM</option>
+                                            <option value="10:00 AM">10:00 AM</option>
+                                            <option value="10:30 AM">10:30 AM</option>
+                                            <option value="11:00 AM">11:00 AM</option>
+                                            <option value="11:30 AM">11:30 AM</option>
+                                            <option value="12:00 PM">12:00 PM</option>
+                                            <option value="12:30 PM">12:30 PM</option>
+                                            <option value="1:00 PM">1:00 PM</option>
+                                            <option value="1:30 PM">1:30 PM</option>
+                                            <option value="2:00 PM">2:00 PM</option>
+                                            <option value="2:30 PM">2:30 PM</option>
+                                            <option value="3:00 PM">3:00 PM</option>
+                                            <option value="3:30 PM">3:30 PM</option>
+                                            <option value="4:00 PM">4:00 PM</option>
+                                            <option value="4:30 PM">4:30 PM</option>
+                                            <option value="5:00 PM">5:00 PM</option>
+                                            <option value="5:30 PM">5:30 PM</option>
+                                            <option value="6:00 PM">6:00 PM</option>
+                                            <option value="6:30 PM">6:30 PM</option>
+                                            <option value="7:00 PM">7:00 PM</option>
+                                            <option value="7:30 PM">7:30 PM</option>
+                                            <option value="8:00 PM">8:00 PM</option>
+                                            <option value="8:30 PM">8:30 PM</option>
+                                            <option value="9:00 PM">9:00 PM</option>
+                                            <option value="9:30 PM">9:30 PM</option>
+                                            <option value="10:00 PM">10:00 PM</option>
+                                            <option value="10:30 PM">10:30 PM</option>
+                                            <option value="11:00 PM">11:00 PM</option>
+                                            <option value="11:30 PM">11:30 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 text-left">
+                                    <div class="form-group">
+                                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Find A Spot</button>
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        Select a Time:
+                                    </div>
+                                </div>
+                                <div class="col-md-16">
+                                    <div class="form-group">
+                                        <div class="container">
+                                            <button type="button" class="btn btn-warning">Choice 1</button>
+                                            <button type="button" class="btn btn-warning">Choice 2</button>
+                                            <button type="button" class="btn btn-warning">Choice 3</button>
+                                            <button type="button" class="btn btn-warning">Choice 4</button>
+                                            <button type="button" class="btn btn-warning">Choice 5</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button -->
+                            </div>
+                        </form>
+                        <!-- form end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    $(function() {
+        var fecha = $("#datepicker").datepicker();
+        console.log(fecha);
 
-</html> -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-<head>
-    <title>Jasmine Spec Runner</title>
-
-    <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.0/jasmine_favicon.png">
-    <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.0/jasmine.css">
-    <script type="text/javascript" src="../libs/jquery.js"></script>
-    <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine.js"></script>
-    <script type="text/javascript" src="lib/jasmine-1.3.0/jasmine-html.js"></script>
-    <script type="text/javascript" src="lib/jasmine-jquery.js"></script>
-
-    <!-- include source files here... -->
-    <link rel="stylesheet" type="text/css" href="../jquery.filthypillow.css">
-    <script type="text/javascript" src="../libs/moment.js"></script>
-    <script type="text/javascript" src="../jquery.filthypillow.js"></script>
-
-    <!-- include spec files here... -->
-    <script type="text/javascript" src="spec/SpecHelper.js"></script>
-    <script type="text/javascript" src="spec/FPSpec.js"></script>
-
-    <script type="text/javascript">
-        (function() {
-            var jasmineEnv = jasmine.getEnv();
-            jasmineEnv.updateInterval = 1000;
-            var htmlReporter = new jasmine.HtmlReporter();
-            jasmineEnv.addReporter(htmlReporter);
-            jasmineEnv.specFilter = function(spec) {
-                return htmlReporter.specFilter(spec);
-            };
-            var currentWindowOnload = window.onload;
-            window.onload = function() {
-                if (currentWindowOnload) {
-                    currentWindowOnload();
-                }
-                execJasmine();
-            };
-
-            function execJasmine() {
-                jasmineEnv.execute();
-            }
-        })();
-    </script>
-</head>
-
-<body>
-    <div id="jasmine-fixtures"></div>
-
-</body>
+    });
+    $("#send").on("click", function(e) {
+        e.preventDefault();
+        console.log('entro');
+        var date = $("#datepicker").val();
+        console.log(date);
+    });
+</script>
 
 </html>
