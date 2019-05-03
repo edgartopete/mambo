@@ -15,4 +15,12 @@
     /* These two lines are counted as one :-)       */
     display: flex;
     align-items: center;
+<<<<<<< HEAD
+=======
+}
+.toShedule{
+
+    margin-right: 5px;
+    margin-bottom: 5px;
+>>>>>>> edgar
 }

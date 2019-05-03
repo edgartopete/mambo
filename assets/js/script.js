@@ -10,6 +10,8 @@
   provider.addScope('email');
   authService.signInWithPopup(provider)
         .then(function(result) {
+
+            localStorage.setItem("email",result.user.email); 
             // logueado con éxito
             window.location.replace("HomeMambo.html");
             console.log('Hemos autenticado al usuario ', result.user);
@@ -39,11 +41,28 @@ authService.signInWithPopup(provider)
             console.log('Detectado un error:', error);
         });
  });
+//manejador de eventos para realizar login con correo electronico
+ $("#btnlogin").on("click",function(event){
+  event.preventDefault();
+  var email=$("#inputEmail").val();
+  localStorage.setItem("email",email); 
+  var password=$("#inputPassword").val();
+ 
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorMessage = error.message;
+
+      console.log(errorMessage);
+
+    });
+    localStorage.setItem("email",email); 
+});
  
  //manejador de eventos para cerrar sesión (logout)
  $("#btnLogout").on("click",function(){
   console.log("logout",window.location.pathname)
   authService.signOut();
+  localStorage.clear();
  });
  
  
