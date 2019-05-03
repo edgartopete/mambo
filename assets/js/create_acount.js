@@ -43,18 +43,4 @@ $(document).ready(function () {
             console.log("error");
         }
     });
-
-    $("#btnlogin2").on("click",function(event){
-        event.preventDefault();
-        var email=$("#inputEmail").val();
-        var password=$("#inputPassword").val();
-       console.log("entro");
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
-            var errorMessage = error.message;
-
-            console.log(errorMessage);
-            // ...
-          });
-    });
 });
