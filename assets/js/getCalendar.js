@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+    console.log(localStorage.getItem("email"));
     // Client ID and API key from the Developer Console
     var CLIENT_ID = '978683882765-39iqllfp8j8qd9tvj71kq48istps5c74.apps.googleusercontent.com';
     var API_KEY = 'AIzaSyBEJRfBSbC2vnJu7T-GLa8B-X3wMcr4hTg';
