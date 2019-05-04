@@ -4,8 +4,8 @@ $(document).ready(function () {
         selectedFile = event.target.files[0];
     });
 
-    $("#btnServices").on("click", function (event) {
-        event.preventDefault();
+    $("#btnServices").on("click", function () {
+        
         var fileName = selectedFile.name;
         //var sotorageRef = firebase.storage.ref("/servicesImages/"+fileName);
         var uploadTask = sotorageRef.child('/servicesImages/' + fileName).put(selectedFile);
